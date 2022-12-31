@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Detalles del Usuario</h1>
+    <%= link_to "Regresar al listado de usuarios", usuarios_path, class: 'btn btn-primary' %>
+    <%= link_to "Editar este usuario", edit_usuario_path(@usuario), class: 'btn btn-primary' %>
+    <%= button_to "Eliminar usuario", @usuario, method: :delete, class: 'btn btn-danger' %>
+
+    <div class="card">
+      <table class="table>"
+        <tr>
+          <td><b>Nombre de usuario:</b></td>
+          <td><%= @usuario.nombre %></td>
+        </tr>
+        <tr>
+          <td><b>Apellido de usuario:</b></td>
+          <td><%= @usuario.apellido %></td> 
+        </tr>
+        <tr>
+          <td><b>Día de nacimiento:</b></td>
+          <td><%= @usuario.diadenacimiento %></td> 
+        </tr> 
+        <tr>
+          <td><b>Mes de nacimiento:</b></td>
+          <td><%= @usuario.mesdenacimiento %></td> 
+        </tr>
+        <tr>
+          <td><b>Año de nacimiento:</b></td>
+          <td><%= @usuario.aniodenacimiento %></td> 
+        </tr>
+        <tr>
+          <td><b>DNI:</b></td>
+          <td><%= @usuario.dni %></td> 
+        </tr>
+      </table> 
+    </div>
+  
+  </div>
+</div>

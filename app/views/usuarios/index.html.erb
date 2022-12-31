@@ -1,0 +1,38 @@
+<h1>Lista de Usuarios</h1>
+<a href="<%= new_usuario_path %>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+    <i class="fas fa-flag"></i>
+  </span>
+  <span class="text">Crear Usuario</span>
+</a>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @usuarios.each do |usuarios|%> 
+    <tr>
+      <td><%= usuarios.nombre %></td>
+      <td><%= usuarios.apellido %></td>
+      <td><%= usuarios.edad.to_i %></td>
+      
+      <td><%= link_to "Detalles", usuario_path(usuarios), class: 'btn btn-primary' %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+ <%
+    edades=[25, 20, 50, 36, 50, 52, 39, 26, 21, 33 ].inject(0) {|sum,edades | sum+edades }
+      %>
+<h6> El promedio de edades entre los usuarios es:  <%= edades %></h6>
+ <% mes=[1,1,3,4,4,5,7,7,9,10]
+ personas=["Rodrigo", "Joey", "Andrea", "Miguel", "Luis Miguel", "Henry", "Julieta", "Anya", "Freya", "Marta"]
+  zipped= mes.zip(personas)
+  sorted=zipped.sort_by {|z| z.first}
+  sorted.map(&:first) %>
+  <h6>Orden por mes: <%= sorted %></h6>
